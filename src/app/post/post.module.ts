@@ -6,12 +6,14 @@ import { IndexComponent } from './index/index.component';
 import { CreateComponent } from './create/create.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewComponent } from './view/view.component';
 
 
 @NgModule({
   declarations: [
     IndexComponent,
-    CreateComponent
+    CreateComponent,
+    ViewComponent
   ],
   imports: [
     CommonModule,
