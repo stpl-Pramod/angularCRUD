@@ -5,9 +5,14 @@ import { HttpClient } from  '@angular/common/http';
   providedIn: 'root'
 })
 export class PostServiceService {
-baseUrl = "https://jsonplaceholder.typicode.com/posts/";
+baseUrl = "http://whizhackwebapi.mahamining.com/whizhack_cms/media/GetAllByPagination";
+createUrl = "http://whizhackwebapi.mahamining.com/whizhack_cms/media/Register";
+
   constructor(private http:HttpClient) { }
 getIndex(){
   return this.http.get(this.baseUrl);
+}
+createMedia(post:any){
+  return this.http.post(this.createUrl, post);
 }
 }

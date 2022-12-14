@@ -7,16 +7,16 @@ import { PostServiceService } from '../post-service.service';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-indexData:any;
-  constructor(private apiService:PostServiceService) { }
+  indexData: any;
+  constructor(private apiService: PostServiceService) { }
 
   ngOnInit(): void {
     this.getIndexData();
   }
-getIndexData(){
-  this.apiService.getIndex().subscribe((res:any)=>{
-    this.indexData = res;
-    console.log(this.indexData);
-  })
-}
+  getIndexData() {
+    this.apiService.getIndex().subscribe((res: any) => {
+      this.indexData = res.responseData.responseData;
+      console.log(this.indexData);
+    })
+  }
 }

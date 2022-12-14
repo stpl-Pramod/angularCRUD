@@ -1,23 +1,23 @@
 <div class="container">
+    <a routerLink="../create" class="btn btn-primary btn-sm mt-3" >Add Media</a>
     <div class="row">
-        <div class="col-md-8">
-            <table class="table table-bordered my-3">
-                <thead>
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-hover my-3">
+                <thead class="table-primary">
                     <tr>
                         <th scope="col">id</th>
-                        <th scope="col">title</th>
-                        <th scope="col">body</th>
+                        <th scope="col">article_Title</th>
+                        <th scope="col">source</th>
+                        <th scope="col">url</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let e of indexData">
-                        
-                        <td>{{e.id}}</td>
-                        <td>{{e.title}}</td>
-                        <td>{{e.body}}</td>
+                        <td>{{e.mediaId}}</td>
+                        <td>{{e.article_Title}}</td>
+                        <td>{{e.source}}</td>
+                        <td>{{e.url}}</td>
                     </tr>
-                   
-                   
                 </tbody>
             </table>
         </div>
