@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PostServiceService } from '../post-service.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class CreateComponent implements OnInit {
     source: new FormControl(),
     url: new FormControl(),
   })
-  constructor(private service:PostServiceService) { }
+  //router: any;
+  constructor(private service:PostServiceService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +29,7 @@ export class CreateComponent implements OnInit {
     console.log(this.mediaForm.value);
     this.service.createMedia(this.mediaForm.value).subscribe((res:any)=>{
       console.log("data saved successfully");
+      this.router.navigateByUrl('post/index');
     })
   }
 
