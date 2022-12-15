@@ -10,6 +10,7 @@ import { PostServiceService } from '../post-service.service';
 export class ViewComponent implements OnInit {
 
   id!: number;
+  pid: any;
   media: any;
   constructor(public apiService: PostServiceService, private route:ActivatedRoute, private router:Router) { }
 
@@ -17,16 +18,13 @@ export class ViewComponent implements OnInit {
     this.viewIndexData();
   }
   viewIndexData() {
-    this.id = this.route.snapshot.params.id;
-    this.route.paramMap.subscribe(res=>{
-      console.log(res);
+    //this.id = this.route.snapshot.params.id;
+    this.route.paramMap.subscribe((param:any)=>{
+      console.log(+param.get('id'));
+      this.pid = +param.get('id');
+      this.apiService.find(this.pid-1).subscribe(res=>{
+        console.log(res);
+      })
     })
-    console.log(this.id);
-    this.apiService.find(27).subscribe((data)=>{
-      this.media = data;
-      
-      console.log(this.media);
-    })
-   
   }
 }

@@ -7,6 +7,7 @@ import { HttpClient } from  '@angular/common/http';
 export class PostServiceService {
 baseUrl = "http://whizhackwebapi.mahamining.com/whizhack_cms/media/GetAllByPagination";
 createUrl = "http://whizhackwebapi.mahamining.com/whizhack_cms/media/Register";
+updateUrl = "http://whizhackwebapi.mahamining.com/whizhack_cms/media/Update";
 
   constructor(private http:HttpClient) { }
 getIndex(){
@@ -16,6 +17,6 @@ createMedia(post:any){
   return this.http.post(this.createUrl, post);
 }
 find(id:number){
-  return this.http.get(this.baseUrl+'/'+ id );
+  return this.http.get(this.updateUrl+'/'+ id );
 }
 }
