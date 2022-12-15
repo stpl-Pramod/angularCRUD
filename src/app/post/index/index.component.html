@@ -19,7 +19,7 @@
                         <td>{{e.source}}</td>
                         <td>{{e.url}}</td>
                         <td>
-                            <a href="#" [routerLink]="['../'+ e.id+'/view']" class="btn btn-sm btn-info">View</a>
+                            <a href="#" [routerLink]="['../view/', + e.mediaId]" class="btn btn-sm btn-info">View</a>
                         </td>
                     </tr>
                 </tbody>

@@ -2,24 +2,12 @@
     <h1>View Post</h1>
   
     <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
-   
-    <div>
-        <strong>ID:</strong>
-        
+    <div class="mediaData card card-body mt-3" *ngFor="let i of media">
+        <strong>ID:{{i.mediaId}}</strong>
+        <strong>Article Title: {{i.article_Title}}</strong>
+        <strong>Source:{{i.source}}</strong>
+        <strong>URL:{{i.url}}</strong>
     </div>
-   
-    <div>
-        <strong>Article Title:</strong>
-       
-    </div>
-   
-    <div>
-        <strong>Source:</strong>
-        
-    </div>
-    <div>
-        <strong>URL:</strong>
-        <!-- <p>{{ e.URL }}</p> -->
-    </div>
+    
    
 </div>

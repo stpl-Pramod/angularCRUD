@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'', redirectTo:'post/index', pathMatch:'full'},
   {path:'post/index', component:IndexComponent},
   {path:'post/create', component:CreateComponent},
-  {path:'post/:id/view', component:ViewComponent}
+  {path:'post/view/:id', component:ViewComponent}
 ];
 
 @NgModule({

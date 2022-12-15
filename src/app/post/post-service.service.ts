@@ -15,4 +15,7 @@ getIndex(){
 createMedia(post:any){
   return this.http.post(this.createUrl, post);
 }
+find(id:number){
+  return this.http.get(this.baseUrl+'/'+ id );
+}
 }
