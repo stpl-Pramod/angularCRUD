@@ -19,4 +19,12 @@ export class IndexComponent implements OnInit {
       console.log(this.indexData);
     })
   }
+
+  deleteMedia(id:any){
+console.log(id);
+    this.apiService.delete(id.mediaId).subscribe((res:any)=>{
+      this.indexData = res.filter((item:any)=> item.id !== id);
+      console.log("delete successfully");
+    })
+  }
 }
