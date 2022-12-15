@@ -18,8 +18,10 @@
                         <td>{{e.article_Title}}</td>
                         <td>{{e.source}}</td>
                         <td>{{e.url}}</td>
-                        <td>
-                            <a href="#" [routerLink]="['../view/', + e.mediaId]" class="btn btn-sm btn-info">View</a>
+                        <td style="min-width: 150px;">
+                            <a href="#" [routerLink]="['../view/', + e.mediaId]" class="btn btn-sm btn-info m-1">View</a>
+                            <!-- <a href="#" [routerLink]="['../update/', + e.mediaId]" class="btn btn-sm btn-primary m-1">update</a> -->
+                            <a href="#" class="btn btn-sm btn-primary m-1">update</a>
                         </td>
                     </tr>
                 </tbody>
