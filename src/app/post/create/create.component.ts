@@ -10,10 +10,10 @@ import { PostServiceService } from '../post-service.service';
 })
 export class CreateComponent implements OnInit {
   mediaForm = new FormGroup({
-    createdBy: new FormControl(0),
+    createdBy: new FormControl(1),
     modifiedBy: new FormControl(0),
-    createdDate: new FormControl("2022-12-14T08:23:43.860Z"),
-    modifiedDate: new FormControl("2022-12-14T08:23:43.860Z"),
+    createdDate: new FormControl(new Date),
+    modifiedDate: new FormControl(new Date),
     isDeleted: new FormControl(true),
     id: new FormControl(0),
     article_Title: new FormControl(),

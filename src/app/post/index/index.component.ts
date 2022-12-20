@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { PostServiceService } from '../post-service.service';
 
@@ -19,12 +20,33 @@ export class IndexComponent implements OnInit {
       console.log(this.indexData);
     })
   }
-
-  deleteMedia(id:any){
-console.log(id);
-    this.apiService.delete(id.mediaId).subscribe((res:any)=>{
-      this.indexData = res.filter((item:any)=> item.id !== id);
-      console.log("delete successfully");
+  httpOptions = {
+    headers: new HttpHeaders({
+      'accept': '*/*',
+      'Content-Type': 'application/json',
+      
     })
   }
-}
+  deleteMedia(e:any){
+    console.log(e);
+    let deleteObj = {
+      "id":e.mediaId,
+      "modifiedBy": 0,
+    }
+   
+     this.apiService.delete(deleteObj).subscribe((res:any)=>{
+      //  this.indexData = this.indexData.filter((item:any)=>item.id !== deleteObj.id);
+      console.log(res);
+      
+       console.log("delete successfully");
+    });
+
+    };
+
+    // this.apiService.delete(e.mediaId).subscribe((res:any)=>{
+    //   let index = this.indexData.indexOf(e);
+    //   this.indexData.splice(index,1);
+    //   console.log("delete successfully");
+    // });
+  }
+
