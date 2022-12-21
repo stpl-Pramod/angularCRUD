@@ -20,33 +20,17 @@ export class IndexComponent implements OnInit {
       console.log(this.indexData);
     })
   }
-  httpOptions = {
-    headers: new HttpHeaders({
-      'accept': '*/*',
-      'Content-Type': 'application/json',
-      
-    })
-  }
-  deleteMedia(e:any){
+  
+  deleteMedia(e: any) {
     console.log(e);
     let deleteObj = {
-      "id":e.mediaId,
+      "id": e.mediaId,
       "modifiedBy": 0,
     }
-   
-     this.apiService.delete(deleteObj).subscribe((res:any)=>{
-      //  this.indexData = this.indexData.filter((item:any)=>item.id !== deleteObj.id);
+    this.apiService.delete(deleteObj).subscribe((res: any) => {
       console.log(res);
-      
-       console.log("delete successfully");
+      console.log("delete successfully");
     });
-
-    };
-
-    // this.apiService.delete(e.mediaId).subscribe((res:any)=>{
-    //   let index = this.indexData.indexOf(e);
-    //   this.indexData.splice(index,1);
-    //   console.log("delete successfully");
-    // });
-  }
+  };
+}
 
