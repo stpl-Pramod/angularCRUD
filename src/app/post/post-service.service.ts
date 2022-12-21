@@ -27,9 +27,10 @@ deleteUrl = "http://demowhizhackwebapi.mahamining.com/whizhack_cms/media/Delete"
   }
   delete(med:any){
     const options = {
-      headers: new HttpHeaders({'Content-Type': 'application/json',  }),
-      body: med,
-    };
-    return   this.http.delete(this.deleteUrl, options);
+      header : new HttpHeaders({"Content Type" : "Application/json"}),
+      body : med,
+    }
+    return this.http.delete(this.deleteUrl, options);
+
   }
 }

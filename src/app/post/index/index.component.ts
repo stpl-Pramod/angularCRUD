@@ -20,17 +20,16 @@ export class IndexComponent implements OnInit {
       console.log(this.indexData);
     })
   }
-  
-  deleteMedia(e: any) {
-    console.log(e);
+  deleteMedia(e:any){
     let deleteObj = {
       "id": e.mediaId,
-      "modifiedBy": 0,
+      "modifiedBy": 0
     }
-    this.apiService.delete(deleteObj).subscribe((res: any) => {
+    this.apiService.delete(deleteObj).subscribe((res:any)=>{
       console.log(res);
-      console.log("delete successfully");
-    });
-  };
+      console.log("delete2 successfully");
+    })
+  }
+  
 }
 
