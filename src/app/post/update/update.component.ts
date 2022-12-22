@@ -26,18 +26,38 @@ export class UpdateComponent implements OnInit {
   constructor(public service:PostServiceService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
-    
-  }
-  onSubmit(){
-   // console.log(this.updateForm.value)
     this.id = this.route.snapshot.params['id'];
-    this.service.find(this.id).subscribe((data:any)=>{
-      this.updateForm = data;
-      console.log(data);
-    })
-    this.service.update(this.id, this.updateForm.value).subscribe((res:any)=>{
+    // this.service.find(this.id).subscribe((data:any)=>{
+    //   this.updateForm = data.responseData.responseData;
+    //   console.log(data);
+    // })
+  }
+  get f(){
+    return this.updateForm.controls;
+  }
+  onSubmit(e:any){
+   console.log(this.updateForm.value)
+    
+    let updateObj = {
+      "createdBy": 0,
+      "modifiedBy": 0,
+      "createdDate": new Date(),
+      "modifiedDate": new Date(),
+      "isDeleted": true,
+      "id": this.id,
+      "article_Title": this.updateForm.value.article_Title,
+      "source": this.updateForm.value.source,
+      "url": this.updateForm.value.url
+    }
+    
+    this.service.update(updateObj).subscribe((res:any)=>{
     console.log(res);
     })
   }
+
+
+  
+
+
 
 }

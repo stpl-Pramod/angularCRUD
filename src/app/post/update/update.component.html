@@ -2,7 +2,7 @@
     <a routerLink="../../index" class="btn btn-primary btn-sm mt-3" >Back to Media List</a>
     <div class="row">
         <div class="col-md-6">
-            <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" class="border p-3 mt-3">
+            <form [formGroup]="updateForm" (ngSubmit)="onSubmit(updateForm.controls.value)" class="border p-3 mt-3">
                 <div class="mb-3">
                     <label for="article_Title" class="form-label">article_Title</label>
                     <input type="text" class="form-control" formControlName="article_Title" placeholder="article_Title">

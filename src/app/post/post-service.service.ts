@@ -20,11 +20,20 @@ deleteUrl = "http://demowhizhackwebapi.mahamining.com/whizhack_cms/media/Delete"
     return this.http.post(this.createUrl, post);
   }
   find(id:any){
-    return this.http.get(this.updateUrl+'/'+id);
+    const httpoptions = {
+      header : new HttpHeaders({"Content Type" : "Application/json"}),
+      body : id,
+    }
+    return this.http.get(this.updateUrl);
   }
-  update(id:any, body:any){
-    return this.http.put(this.updateUrl+'/'+id, body);
+  update(pt:any){
+    // const httpoptions = {
+    //   header : new HttpHeaders({"Content Type" : "Application/json"}),
+    //   body : pt,
+    // }
+    return this.http.put(this.updateUrl, pt);
   }
+
   delete(med:any){
     const options = {
       header : new HttpHeaders({"Content Type" : "Application/json"}),
