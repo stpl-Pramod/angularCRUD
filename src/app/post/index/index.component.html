@@ -21,7 +21,7 @@
                         <td style="min-width: 220px;">
                             <a href="#" [routerLink]="['../view/', + e.mediaId]" class="btn btn-sm btn-info m-1">View</a>
                             <!-- <a href="#" [routerLink]="['../update/', + e.mediaId]" class="btn btn-sm btn-primary m-1">update</a> -->
-                            <a href="#" class="btn btn-sm btn-primary m-1">update</a>
+                            <a href="#" [routerLink]="['../update/', + e.mediaId]" class="btn btn-sm btn-primary m-1">update</a>
                             <button type="button" (click)="deleteMedia(e)" class="btn btn-sm btn-danger">Delete</button>
                         </td>
                     </tr>
