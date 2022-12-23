@@ -10,6 +10,8 @@ import { PostServiceService } from '../post-service.service';
 })
 export class UpdateComponent implements OnInit {
   id!: number;
+  postData:any;
+  singleData:any;
 
   
   updateForm = new FormGroup({
@@ -27,16 +29,25 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    // this.service.find(this.id).subscribe((data:any)=>{
-    //   this.updateForm = data.responseData.responseData;
-    //   console.log(data);
-    // })
+    console.log(this.id);
+    //debugger;
+    this.service.find().subscribe((data:any)=>{
+      this.postData = data.responseData.responseData;
+      //console.log(data);
+      //console.log(this.postData.find(this.postData.mediaId = this.id));
+      //console.log("geettt");
+      this.singleData = this.postData.filter((d1:any) => d1.mediaId == this.id);
+      //console.log(this.singleData);
+    });
+    // this.onSubmit(){
+    //   this.router.navigateByUrl('post/index')
+    // }
   }
-  get f(){
-    return this.updateForm.controls;
-  }
-  onSubmit(e:any){
-   console.log(this.updateForm.value)
+  // get f(){
+  //   return this.updateForm.controls;
+  // }
+  onSubmit(){
+   //console.log(this.updateForm.value)
     
     let updateObj = {
       "createdBy": 0,
@@ -51,11 +62,13 @@ export class UpdateComponent implements OnInit {
     }
     
     this.service.update(updateObj).subscribe((res:any)=>{
-    console.log(res);
-    })
+   // console.log(res);
+    });
+    this.router.navigateByUrl('post/index')
+    
   }
 
-
+  
   
 
 

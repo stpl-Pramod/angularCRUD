@@ -22,9 +22,9 @@ export class ViewComponent implements OnInit {
     this.route.paramMap.subscribe((param:any)=>{
       console.log(+param.get('id'));
       this.pid = +param.get('id');
-      this.apiService.find(this.pid-1).subscribe(res=>{
-        console.log(res);
-      })
+      // this.apiService.find(this.pid-1).subscribe(res=>{
+      //   console.log(res);
+      // })
     })
   }
 }

@@ -9,7 +9,7 @@ import { PostServiceService } from '../post-service.service';
 })
 export class IndexComponent implements OnInit {
   indexData: any;
-  constructor(private apiService: PostServiceService) { }
+  constructor(private apiService: PostServiceService) { }            
 
   ngOnInit(): void {
     this.getIndexData();
