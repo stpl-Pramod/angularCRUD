@@ -50,9 +50,12 @@ export class UpdateComponent implements OnInit {
     }
     
     this.service.update(updateObj).subscribe((res:any)=>{
+      if(res.statusCode === "200"){
+        this.router.navigateByUrl('post/index')
+      }
    // console.log(res);
     });
-    this.router.navigateByUrl('post/index')
+    
     
   }
 

@@ -10,21 +10,26 @@ import { PostServiceService } from '../post-service.service';
 export class ViewComponent implements OnInit {
 
   id!: number;
-  pid: any;
-  media: any;
+  postData: any;
+  singleData: any;
   constructor(public apiService: PostServiceService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.viewIndexData();
   }
   viewIndexData() {
-    //this.id = this.route.snapshot.params.id;
-    this.route.paramMap.subscribe((param:any)=>{
-      console.log(+param.get('id'));
-      this.pid = +param.get('id');
-      // this.apiService.find(this.pid-1).subscribe(res=>{
-      //   console.log(res);
-      // })
-    })
+    this.id = this.route.snapshot.params.id;
+    console.log(this.id);
+    this.apiService.find().subscribe((data:any)=>{
+      this.postData = data.responseData.responseData;
+      this.singleData = this.postData.filter((d1:any) => d1.mediaId == this.id);
+    });
+    // this.route.paramMap.subscribe((param:any)=>{
+    //   console.log(+param.get('id'));
+    //   this.pid = +param.get('id');
+    //   this.apiService.find(this.pid-1).subscribe(res=>{
+    //     console.log(res);
+    //   })
+    // })
   }
 }

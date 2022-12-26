@@ -1,13 +1,30 @@
 <div class="container">
     <h1>View Post</h1>
-  
     <a href="#" routerLink="/post/index" class="btn btn-primary">Back</a>
-    <div class="mediaData card card-body mt-3" *ngFor="let i of media">
-        <strong>ID:{{i.mediaId}}</strong>
-        <strong>Article Title: {{i.article_Title}}</strong>
-        <strong>Source:{{i.source}}</strong>
-        <strong>URL:{{i.url}}</strong>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mediaData card card-body mt-3" *ngFor="let i of singleData">
+                <div class="row">
+                    <div class="col-2">ID</div>
+                    <div class="col-10 fw-bold">: {{i.mediaId}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-2">Article Title</div>
+                    <div class="col-10 fw-bold">: {{i.article_Title}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-2">Source</div>
+                    <div class="col-10 fw-bold">: {{i.source}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-2">URL</div>
+                    <div class="col-10 fw-bold">: {{i.url}}</div>
+                </div>
+               
+            </div>
+        </div>
     </div>
+   
     
    
 </div>

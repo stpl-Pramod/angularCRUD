@@ -28,6 +28,10 @@ export class IndexComponent implements OnInit {
     this.apiService.delete(deleteObj).subscribe((res:any)=>{
       console.log(res);
       console.log("delete2 successfully");
+      if(res.statusCode === "200"){
+        console.log("Test1");
+        this.getIndexData();
+      }
     })
   }
   
