@@ -30,25 +30,13 @@ export class UpdateComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
-    //debugger;
     this.service.find().subscribe((data:any)=>{
       this.postData = data.responseData.responseData;
-      //console.log(data);
-      //console.log(this.postData.find(this.postData.mediaId = this.id));
-      //console.log("geettt");
       this.singleData = this.postData.filter((d1:any) => d1.mediaId == this.id);
-      //console.log(this.singleData);
     });
-    // this.onSubmit(){
-    //   this.router.navigateByUrl('post/index')
-    // }
+  
   }
-  // get f(){
-  //   return this.updateForm.controls;
-  // }
   onSubmit(){
-   //console.log(this.updateForm.value)
-    
     let updateObj = {
       "createdBy": 0,
       "modifiedBy": 0,
