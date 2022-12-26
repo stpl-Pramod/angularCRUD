@@ -33,6 +33,12 @@ export class UpdateComponent implements OnInit {
     this.service.find().subscribe((data:any)=>{
       this.postData = data.responseData.responseData;
       this.singleData = this.postData.filter((d1:any) => d1.mediaId == this.id);
+      this.updateForm.patchValue({
+        article_Title : this.singleData[0].article_Title,
+        source : this.singleData[0].source,
+        url : this.singleData[0].url,
+
+      })
     });
   
   }
