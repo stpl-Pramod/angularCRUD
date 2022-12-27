@@ -6,11 +6,13 @@ import { MediaComponent } from './media.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-
+import { ShowListDialogComponent } from './show-list-dialog/show-list-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-    MediaComponent
+    MediaComponent,
+    ShowListDialogComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import {MatIconModule} from '@angular/material/icon';
 
     MatTableModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class MediaModule { }

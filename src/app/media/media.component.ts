@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaService } from './media.service';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-media',
@@ -11,7 +12,7 @@ export class MediaComponent implements OnInit {
 
   getData:any;
 
-  constructor(private service:MediaService) { }
+  constructor(private service:MediaService, public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.getAllData();
@@ -22,4 +23,13 @@ export class MediaComponent implements OnInit {
       console.log(resp);
     })
   }
+  showListDialog(){
+    console.log("test dialog");
+    this.dialog.open(ShowListDialogComponent)
+  }
 }
+@Component({
+  selector: 'app-show-list-dialog',
+  templateUrl: 'show-list-dialog/show-list-dialog.component.html',
+})
+export class ShowListDialogComponent { }
