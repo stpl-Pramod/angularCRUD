@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaService } from './media.service';
 import {MatDialog} from '@angular/material/dialog';
+import { ShowListDialogComponent } from './show-list-dialog/show-list-dialog.component';
 
 @Component({
   selector: 'app-media',
@@ -24,12 +25,9 @@ export class MediaComponent implements OnInit {
     })
   }
   showListDialog(){
-    console.log("test dialog");
-    this.dialog.open(ShowListDialogComponent)
+    this.dialog.open(ShowListDialogComponent, {
+      width:'500px'
+   
+    });
   }
 }
-@Component({
-  selector: 'app-show-list-dialog',
-  templateUrl: 'show-list-dialog/show-list-dialog.component.html',
-})
-export class ShowListDialogComponent { }
