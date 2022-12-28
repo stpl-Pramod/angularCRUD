@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaService } from './media.service';
 import {MatDialog} from '@angular/material/dialog';
 import { ShowListDialogComponent } from './show-list-dialog/show-list-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-media',
@@ -26,6 +27,12 @@ export class MediaComponent implements OnInit {
   }
   showListDialog(postData:any){
     this.dialog.open(ShowListDialogComponent, {
+      width:'500px',
+      data: postData
+    });
+  }
+  editListDialog(postData:any){
+    this.dialog.open(EditDialogComponent, {
       width:'500px',
       data: postData
     });
