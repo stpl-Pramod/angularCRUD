@@ -24,10 +24,10 @@ export class MediaComponent implements OnInit {
       console.log(resp);
     })
   }
-  showListDialog(){
+  showListDialog(postData:any){
     this.dialog.open(ShowListDialogComponent, {
-      width:'500px'
-   
+      width:'500px',
+      data: postData
     });
   }
 }
