@@ -9,7 +9,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { ShowListDialogComponent } from './show-list-dialog/show-list-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     MediaComponent,
@@ -23,7 +25,10 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     MatTableModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ]
 })
 export class MediaModule { }

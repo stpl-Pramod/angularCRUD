@@ -1,4 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -7,10 +8,21 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./edit-dialog.component.scss']
 })
 export class EditDialogComponent implements OnInit {
-
-  constructor(@Inject(MAT_DIALOG_DATA) public postData: any) { }
+  @Input() disabled = true;
+  editForm!:FormGroup
+  constructor(@Inject(MAT_DIALOG_DATA) public postData: any) {
+    this.editForm = new FormGroup({
+      article_Title: new FormControl(''),
+      source: new FormControl(''),
+      url: new FormControl('')
+    });
+   }
 
   ngOnInit(): void {
+  }
+  onSubmit(){
+    console.log(this.editForm.value);
+    
   }
 
 }
