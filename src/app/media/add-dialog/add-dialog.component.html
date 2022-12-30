@@ -1,24 +1,24 @@
 <div class="container my-3">
     <div class="row">
       <div class="col-md-12">
-            <form >
+            <form [formGroup]="addMediaForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-md-6">
                         <mat-form-field class="w-100">
                             <mat-label>Article Title</mat-label>
-                            <input matInput placeholder="Article Title">
+                            <input matInput formControlName="article_Title">
                         </mat-form-field>
                     </div>
                     <div class="col-md-6">
                         <mat-form-field class="w-100">
                             <mat-label>Source</mat-label>
-                            <input matInput placeholder="Source">
+                            <input matInput formControlName="source">
                         </mat-form-field>
                     </div>
                     <div class="col-md-6">
                         <mat-form-field class="w-100">
                             <mat-label>URL</mat-label>
-                            <input matInput placeholder="url">
+                            <input matInput formControlName="url">
                         </mat-form-field>
                     </div>
                     <div class="col-md-12 text-end">

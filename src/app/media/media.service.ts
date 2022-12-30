@@ -23,5 +23,8 @@ export class MediaService {
   updateList(upData:any){
     return this.http.put(this.updateUrl, upData);
   }
+  addMedia(post:any){
+    return this.http.post(this.createUrl, post);
+  }
 
 }
