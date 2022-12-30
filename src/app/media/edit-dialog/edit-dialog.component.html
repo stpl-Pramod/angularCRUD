@@ -2,33 +2,27 @@
 <!-- {{postData.mediaId}} -->
 <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
     <div class="row">
-        <div class="col-md-12">
-            <mat-form-field appearance="outline" class="w-100">
-                <mat-label>Article mediaId</mat-label>
-                <input matInput  value="{{postData.mediaId}}" [disabled]='disabled'>
-              </mat-form-field>
-        </div>
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Article Title</mat-label>
                 <input matInput formControlName="{{postData.article_Title}}" value="{{postData.article_Title}}">
               </mat-form-field>
-        </div>
+        </div> -->
         <div class="col-md-12">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Article Source</mat-label>
-                <input matInput formControlName="{{postData.source}}" value="{{postData.source}}">
+                <input matInput formControlName="source" >
               </mat-form-field>
         </div>
         <div class="col-md-12">
             <mat-form-field appearance="outline" class="w-100">
                 <mat-label>Article URL</mat-label>
-                <input matInput formControlName="{{postData.url}}" value="{{postData.url}}">
+                <input matInput formControlName="url">
               </mat-form-field>
         </div>
         <div class="col-md-12 text-end">
-            <button mat-raised-button color="primary" class="mt-2">Primary</button>
-
+            <button mat-raised-button type="submit" color="primary" class="mt-2"> Update</button>
+            <button mat-raised-button color="warn" class="mt-2 ms-2" mat-dialog-close>Cancel</button>
         </div>
     </div>
     

@@ -32,9 +32,13 @@ export class MediaComponent implements OnInit {
     });
   }
   editListDialog(postData:any){
-    this.dialog.open(EditDialogComponent, {
+    const dialogRef = this.dialog.open(EditDialogComponent, {
       width:'500px',
       data: postData
     });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
+  
 }
