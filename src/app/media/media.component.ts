@@ -36,9 +36,6 @@ export class MediaComponent implements OnInit {
       width:'500px',
       data: postData
     });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
   
 }
