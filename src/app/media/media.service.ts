@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -26,5 +26,11 @@ export class MediaService {
   addMedia(post:any){
     return this.http.post(this.createUrl, post);
   }
-
+  deleteItem(med:any){
+    let headerOptions = {
+      header : new HttpHeaders({"Content Type" : "Application/json"}),
+      body : med,
+    }
+    return this.http.delete(this.deleteUrl, headerOptions)
+  }
 }

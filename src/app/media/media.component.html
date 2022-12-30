@@ -31,7 +31,7 @@
             <button mat-mini-fab color="accent" aria-label="icon" class="mx-1" (click)="editListDialog(element)">
               <mat-icon>edit_Note</mat-icon>
             </button>
-            <button mat-mini-fab color="warn" aria-label="icon">
+            <button mat-mini-fab color="warn" aria-label="icon" (click)="deleteItem(element.mediaId)">
               <mat-icon>delete</mat-icon>
             </button>
           </td>

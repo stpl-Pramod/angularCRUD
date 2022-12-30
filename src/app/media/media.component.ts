@@ -43,5 +43,14 @@ export class MediaComponent implements OnInit {
       width:'500px'
     });
   }
+  deleteItem(id:any){
+    let headerOptions = {
+      'id': id,
+      'modifiedBy': 0
+    }
+    this.service.deleteItem(headerOptions).subscribe((res:any)=>{
+      console.log("deleted");
+    })
+  }
   
 }
