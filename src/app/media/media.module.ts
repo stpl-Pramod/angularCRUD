@@ -12,11 +12,13 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 @NgModule({
   declarations: [
     MediaComponent,
     ShowListDialogComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    AddDialogComponent
   ],
   imports: [
     CommonModule,

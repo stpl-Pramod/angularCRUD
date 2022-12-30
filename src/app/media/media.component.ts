@@ -3,6 +3,7 @@ import { MediaService } from './media.service';
 import {MatDialog} from '@angular/material/dialog';
 import { ShowListDialogComponent } from './show-list-dialog/show-list-dialog.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 @Component({
   selector: 'app-media',
@@ -35,6 +36,11 @@ export class MediaComponent implements OnInit {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       width:'500px',
       data: postData
+    });
+  }
+  addDialog(){
+    const dialogRef = this.dialog.open(AddDialogComponent, {
+      width:'500px'
     });
   }
   
